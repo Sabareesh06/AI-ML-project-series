@@ -8,11 +8,11 @@ chat_history = {}
 user_name = ""
 
 def remember_user_input(question, answer):
-    # Store the answer with a lowercased version of the question
+    
     chat_history[question.lower()] = answer
 
 def recall_context(question):
-    # Check for variations in the question
+    
     question_lower = question.lower()
     for stored_question in chat_history:
         if re.search(re.escape(question_lower), stored_question):
@@ -62,7 +62,7 @@ def chatbot_response(user_input):
         return handle_error(user_input)
 
 def handle_error(user_input):
-    # More specific error handling based on common misunderstandings
+    
     if "help" in user_input:
         return "I'm here to assist you! Could you please specify what you need help with?"
     elif "who" in user_input or "what" in user_input:
